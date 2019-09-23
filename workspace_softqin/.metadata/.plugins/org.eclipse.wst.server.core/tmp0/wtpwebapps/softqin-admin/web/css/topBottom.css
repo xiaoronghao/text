@@ -1,0 +1,130 @@
+.nav{
+    height:80px;
+    width: 100%;
+    box-shadow:0 10px 20px #e6eaec;
+    position: relative;
+    z-index: 100;
+}
+@media (max-width: 1200px){
+    .nav{
+        width: 1200px;
+    }
+}
+.logo{
+    float: left;
+}
+.logo img{
+    width: 234px;
+    height:33px;
+    margin-top: 20px;
+    margin-left:50px;
+}
+.menu li{
+    float: right;
+}
+.menu li a:hover{
+    color: #ffffff;
+    background-color: #db1927;
+}
+.menu li a{
+    display: inline-block;
+    width: 100px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 14px;
+}
+.menu_imgBox a{
+    display: inline-block;
+    float: right;
+    width: 75px;
+    height: 80px;
+    line-height: 88px;
+    text-align: center;
+}
+.menu_imgBox{
+    display: none;
+    /*display: inline-block;*/
+    float: right;
+    margin-right: 10px;
+}
+.checked{
+    background-color: #db1927;
+}
+.checked a{
+    color: #ffffff;
+}
+.language{
+    color: #db1927;
+}
+
+/*nav缁撴潫*/
+.bottom{
+    margin-top: -3px;
+    padding: 10px 0;
+    height: 70px;
+    width: 100%;
+}
+@media (max-width: 1200px){
+    .bottom{
+        width: 1200px;
+    }
+}
+.bottom_cont{
+    width:800px;
+    height:70px;
+    margin: 0 auto;
+}
+.bottom_cont span{
+    display: inline-block;
+    height: 21px;
+    margin-right: 15px;
+    background: url("../image/circle.png") no-repeat left;
+}
+.bottom_cont img{
+    display: inline-block;
+    margin-left: 6px;
+    margin-right: 10px;
+}
+.bottom_cont p{
+    text-align: center;
+    margin-top: 8px;
+    height: 21px;
+    line-height: 21px;
+}
+.bottom_p1{
+    color: #656565;
+}
+.bottom_p2{
+    color: #999999;
+}
+/*bottom缁撴潫锛屼互涓婃槸top鍜宐ottom鐨勬牱寮�*/
+.displayNone{
+    display: none;
+}
+.project_list{
+    position: absolute;
+    top: 82px;
+    right: 0;
+    background-color: #ffffff;
+    opacity: 0.7;
+    padding-left: 20px;
+    z-index: 100;
+    box-shadow: -5px 5px 10px #888888;
+}
+.project_list a:hover{
+    color: #d7000f;
+}
+.project_list dl{
+    margin: 25px;
+    float: left;
+}
+.project_list h2{
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+.project_list dl dt{
+    height: 30px;
+    line-height: 30px;
+}
+/*椤圭洰浠嬬粛list鏍峰紡*/

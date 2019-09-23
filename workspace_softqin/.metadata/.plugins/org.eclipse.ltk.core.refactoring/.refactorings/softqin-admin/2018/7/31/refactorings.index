@@ -1,0 +1,31 @@
+1532942785184	Rename type 'MaterialController'
+1532955036503	Copy file
+1532955047356	Rename resource 'account_list.jsp'
+1533001026822	Copy folder
+1533002276802	Rename resource 'material_add.jsp'
+1533003889303	Delete element
+1533003927574	Rename resource 'andorra_edit.jsp'
+1533014017105	Copy file
+1533014019751	Copy file
+1533014041730	Rename resource 'series_list.jsp'
+1533014050099	Rename resource 'series_edit.jsp'
+1533014998142	Rename type 'AndorraController'
+1533019801656	Delete element
+1533019840910	Delete element
+1533019977132	Rename resource 'andorra_list.jsp'
+1533019986292	Rename resource 'andorra_edit.jsp'
+1533020759955	Delete element
+1533020802362	Rename type 'AndorraController'
+1533023278059	Copy files
+1533023290419	Rename resource 'news_list.jsp'
+1533023303609	Rename resource 'news_edit.jsp'
+1533024585952	Copy compilation unit
+1533024598289	Rename type 'NewsController'
+1533026815796	Copy files
+1533026839978	Rename resource 'news_list.jsp'
+1533026880677	Rename resource 'news_edit.jsp'
+1533027868812	Copy compilation unit
+1533027881044	Rename type 'NewsController'
+1533032314652	Delete element
+1533032462322	Delete element
+1533034516229	Rename type 'WebMaterialInterfaceController'

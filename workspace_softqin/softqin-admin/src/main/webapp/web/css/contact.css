@@ -1,0 +1,105 @@
+.contact_box{
+    width: 1200px;
+    margin: 0 auto;
+}
+.contact_box:after{
+    clear: both;
+    content:"";
+    display:block;
+}
+.contact{
+    margin-top: 62px;
+}
+.contact_us{
+    font-size: 27px;
+    font-weight: 600;
+}
+.contact_us span{
+    margin-left: 10px;
+    color: #d7000f;
+}
+.contact_message{
+    margin-top: 14px;
+    font-size: 11px;
+    color:#999999;
+}
+.input_name{
+    padding-left: 14px;
+    margin-top: 34px;
+    border:1px solid #dcdcdc;
+    width: 168px;
+    height:46px;
+    line-height: 46px;
+}
+.input_phone{
+    padding-left: 14px;
+    border:1px solid #dcdcdc;
+    width: 236px;
+    height:46px;
+    margin: 0 20px;
+    line-height: 46px;
+}
+.input_email{
+    padding-left: 14px;
+    border:1px solid #dcdcdc;
+    width: 236px;
+    height:46px;
+    line-height: 46px;
+}
+.textbox{
+    padding: 14px;
+    margin-top: 20px;
+    border:1px solid #dcdcdc;
+    width: 698px;
+    height:82px;
+}
+.submit{
+    display: inline-block;
+    text-align: center;
+    color: #ffffff;
+    background-color: #d7000f;
+    width: 728px;
+    height:46px;
+    line-height: 46px;
+    margin-top: 20px;
+    cursor:pointer;
+}
+.submit:active{
+    background-color: #8B0000;
+}
+.input_box{
+    float: left;
+}
+.address_box{
+    margin-top: 38px;
+    margin-left: 58px;
+    float: left;
+}
+.addressBox_company{
+    font-size: 17px;
+    padding-left: 15px;
+    background: url("../image/L.png") no-repeat left center;
+}
+.addressBox_message{
+    display: inline-block;
+    margin: 6px 0 18px 15px;
+    color:#999999;
+}
+.addressBox_ul{
+    color: #959595;
+    margin-left: 15px;
+}
+.addressBox_ul li{
+    height:24px;
+}
+.addressBox_ul li img{
+    margin:12px 27px 0 0;
+}
+.contact_map{
+    margin: 34px 0 130px 0;
+    height: 257px;
+    width: 1200px;
+}
+.bottom{
+    background-color: #292929;
+}

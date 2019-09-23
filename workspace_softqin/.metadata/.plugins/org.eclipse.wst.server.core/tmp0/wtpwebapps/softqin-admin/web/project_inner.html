@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>项目介绍</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/topBottom.css">
+    <link rel="stylesheet" href="css/project_inner.css">
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <img src="image/logo.png" alt="logo">
+        </div>
+        <!--logo-->
+        <ul class="menu">
+            <span class="menu_imgBox">
+                <a href="">
+                    <img src="image/wechat.png" alt="微信">
+                </a>
+            </span>
+            <li>
+                <a href="contact.html">联系我们</a>
+            </li>
+            <li>
+                <a href="new.html">新闻中心</a>
+            </li>
+            <li class="checked" id="project_introduce">
+                <a href="project.html">项目介绍</a>
+            </li>
+            <li>
+                <a href="about.html">关于软秦</a>
+            </li>
+            <li>
+                <a href="index.html">首页</a>
+            </li>
+        </ul>
+        <!--导航-->
+        <div class="project_list displayNone">
+            <!--<dl>-->
+            <!--<h2>龙软系列</h2>-->
+            <!--<dt><a href="">龙软项目</a></dt>-->
+            <!--</dl>-->
+            <!--<dl>-->
+            <!--<h2>磐界系列</h2>-->
+            <!--<dt><a href="">磐界黄山未来城</a></dt>-->
+            <!--<dt><a href="">南通长江智谷</a></dt>-->
+            <!--<dt><a href="">南通磐界数据中心</a></dt>-->
+            <!--<dt><a href="">嘉善信息科技城</a></dt>-->
+            <!--</dl>-->
+            <!---->
+        </div>
+        <!--项目介绍list-->
+    </div>
+    <!--nav结束-->
+    <div class="inner">
+        <div class="inner_box">
+            <p class="inner_p">首页 >项目介绍 >
+                <span>
+                    <!--数据-->
+                </span>
+            </p>
+            <div class="inner_content">
+                <h2>
+                    <!--数据-->
+                </h2>
+                <div class="content_p">
+                    <!--数据-->
+                    <!-- ====新增==== -->
+                        <div class="inner_item">
+                            <span>项目位置</span>
+                            <p class="inner_message inner_address"></p>
+                        </div>
+                        <div class="inner_item">
+                            <span>项目标签</span>
+                            <p class="inner_message inner_a"></p>
+                        </div>
+                        <div class="inner_item">
+                            <span>项目定位</span>
+                            <p class="inner_message inner_posi"></p>
+                        </div>
+                        <div class="inner_con">
+                            <span class="pro_content_class">项目介绍</span>
+                            <p class="inner_message inner_int" id="contWarp"></p>
+                        </div>
+                    </div>
+                    <div class="imgWarp">
+                        <div class="inner_imgBox">
+                            <img src="image/architecture-1817483_1920.png" alt="图片">
+                        </div>
+                    </div>
+                    <!-- ======新增结束===== -->
+            </div>
+        </div>
+    </div>
+    <!--inner结束-->
+    <div class="bottom">
+        <div class="bottom_cont">
+            <p class="bottom_p1">
+                <span>
+                    <img src="image/phone.png" alt="电话">010-68888888</span>
+                <span>
+                    <img src="image/email.png" alt="邮箱">1000000</span>
+                <span>
+                    <img src="image/location.png" alt="地址">上海市普陀区云岭东路651号合星大厦12层</span>
+            </p>
+            <p class="bottom_p2">COPYRIGHT(©) 2018 MO004_376软秦</p>
+        </div>
+    </div>
+    <!--bottom结束-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        baseUrl = "http://47.98.197.158:8080/softqin-admin/";
+        $(function () {
+            var ids = GetRequest();
+            var proObjStr = localStorage.getItem(ids.ids);
+            var proObj = JSON.parse(proObjStr);
+            //console.log(proObj);
+               $(".inner_p").find("span").text(proObj[0].name);
+               $(".inner_content").find("h2").text(proObj[0].name);
+               $(".content_p").find(".inner_address").html(proObj[0].pro_location);
+               $(".content_p").find(".inner_a").html(proObj[0].pro_label);
+               $(".content_p").find(".inner_posi").html(proObj[0].pro_evaluate);
+           // var conStr = '<span class="pro_content_class">项目介绍</span>';
+            //conStr += proObj[0].content;
+               $("#contWarp").html(proObj[0].content);
+               //$(".content_p").find(".inner_int").html(proObj[0].content);
+            // $(".inner_imgBox").find("img").attr("src", baseUrl + "TP/" + proObj[0].pic);
+            $.ajax({
+                url: baseUrl + 'webPictureInterface/getPictureByTypeId',
+                dataType: 'json',
+                data:{
+                    typeId:ids.ids
+                }
+            }).done(function (data) {
+               console.log(data);
+               var str="";
+               if(data.data.length<=3){
+                   for(var i=0;i<data.data.length;i++){
+                       str+='<div class="inner_imgBox"><img src="'+baseUrl+'TP/'+data.data[i].pic+'" alt="图片"></div>'
+                   }
+
+               }else{
+                  for(var i=0;i<3;i++){
+                      str+='<div class="inner_imgBox"><img src="'+baseUrl+'TP/'+data.data[i].pic+'" alt="图片"></div>'
+                  }
+               }
+               $(".imgWarp").html(str);
+
+            })
+
+            //            localStorage.clear(ids.ids)
+        })
+        function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+
+
+
+    </script>
+</body>
+
+</html>

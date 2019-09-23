@@ -1,0 +1,5 @@
+com\huixin\haidong\serice\impl\ReportServiceImpl.class
+com\huixin\haidong\serice\impl\LiveServiceImpl.class
+com\huixin\haidong\serice\impl\UserAuthsServiceImpl.class
+com\huixin\haidong\serice\impl\WechatInfoServiceImpl.class
+com\huixin\haidong\serice\impl\BackgroundServiceImpl.class

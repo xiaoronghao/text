@@ -1,0 +1,8 @@
+#Tomcat publish data
+#Thu Aug 09 20:15:15 CST 2018
+org.eclipse.jst.j2ee.server\:softqin-domain=WEB-INF/lib/softqin-domain-1.0.jar
+org.eclipse.jst.j2ee.server\:softqin-core=WEB-INF/lib/softqin-core-1.0.jar
+org.eclipse.jst.jee.server\:/binary\:E\:\\.m2\\repository\\org\\springframework\\spring-web\\4.1.6.RELEASE\\spring-web-4.1.6.RELEASE.jar=WEB-INF/lib/spring-web-4.1.6.RELEASE.jar
+org.eclipse.jst.j2ee.server\:softqin-serviceimpl=WEB-INF/lib/softqin-serviceimpl-1.0.jar
+org.eclipse.jst.j2ee.server\:softqin-service=WEB-INF/lib/softqin-service-1.0.jar
+org.eclipse.jst.j2ee.server\:softqin-framework=WEB-INF/lib/softqin-framework-1.0.jar

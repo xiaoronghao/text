@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ProjectMapper">
+    <!--列表  -->
+	<select id="listPage" parameterType="page" resultType="pd">
+		SELECT 
+		     p.id,p.series_id,p.name,p.content,p.pic,p.pro_location,p.pro_label,p.pro_evaluate,s.name as series_name
+		from 
+		     tb_project p,tb_series s
+		where
+			p.series_id = s.id
+			<if test="pd.name!=null and pd.name!=''">
+				and
+				p.name LIKE CONCAT(CONCAT('%', #{pd.name}),'%')
+			</if>
+		order by p.createtime desc
+	</select>
+	 <!--查询所有 -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		SELECT 
+		       p.id,p.series_id,p.name,p.content,p.pic,p.pro_location,p.pro_label,p.pro_evaluate,s.name as series_name,s.id as series_id
+		from 
+		    tb_project p,tb_series s
+		 where
+		    p.series_id = s.id 
+		 group by p.name
+		 order by p.createtime desc
+	</select>
+		<!-- 通过id获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			pj.id,pj.series_id,pj.name,pj.content,pj.pro_location,pj.pro_label,pj.pro_evaluate,p.pic
+		from 
+			tb_project pj left outer join tb_picture p
+		on
+			pj.id = p.typeId
+		where 
+			pj.id = #{id}
+		group by pj.name
+	</select>
+		<!-- 通过seriesId获取数据 -->
+	<select id="findBySeriesId" parameterType="pd" resultType="pd">
+		select 
+			pj.id,pj.series_id,pj.name,pj.content,pj.pro_location,pj.pro_label,pj.pro_evaluate,p.pic
+		from 
+			tb_project pj left outer join tb_picture p
+		on
+			pj.id = p.typeId
+		where 
+			pj.series_id = #{seriesId}
+		group by pj.name
+	</select>
+	<!-- 新增 -->
+	<insert id="save" parameterType="pd">
+		insert into tb_project (
+		    id,
+		    series_id,
+			name,
+			content,
+			pro_location,
+			pro_label,
+			pro_evaluate
+		) values (
+		    #{id},
+		    #{series_id},
+			#{name},
+			#{content},
+			#{pro_location},
+			#{pro_label},
+			#{pro_evaluate}
+		)
+	</insert>
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  tb_project
+			set name			= #{name},
+			    series_id       =#{series_id},
+				content			= #{content},
+				pro_location    = #{pro_location},
+				pro_label       = #{pro_label},
+				pro_evaluate    =#{pro_evaluate}
+			where 
+				id = #{id}
+	</update>
+	<!-- 删除 -->
+	<delete id="delete" parameterType="pd">
+		delete from tb_project 
+		where 
+			id = #{id}
+	</delete>
+	<!-- 删除图片 -->
+	<update id="delTp" parameterType="pd">
+		update  tb_project
+			set 
+				pic			= ''
+			where 
+				id = #{id}
+	</update>
+	
+</mapper>

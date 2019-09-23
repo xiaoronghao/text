@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+D:\workspace_softqin\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3681134852.index
+2342613305.index
+2040570124.index
+4081685782.index
+2055555879.index
+3230994144.index

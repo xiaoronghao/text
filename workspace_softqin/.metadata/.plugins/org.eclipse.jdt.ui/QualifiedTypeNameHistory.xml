@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.huixin.framework.utils.Const"/>
+<fullyQualifiedTypeName name="com.huixin.haidong.service.system.business.series.SeriesDao"/>
+<fullyQualifiedTypeName name="com.huixin.system.dao.DaoSupport"/>
+<fullyQualifiedTypeName name="com.huixin.haidong.service.system.business.series.SeriesService"/>
+<fullyQualifiedTypeName name="com.huixin.haidong.service.series.SeriesDao"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+<fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartFile"/>
+<fullyQualifiedTypeName name="com.huixin.framework.utils.UuidUtil"/>
+<fullyQualifiedTypeName name="org.apache.commons.io.FileUtils"/>
+<fullyQualifiedTypeName name="com.huixin.haidong.service.project.ProjectDao"/>
+<fullyQualifiedTypeName name="com.huixin.haidong.service.news.NewsDao"/>
+<fullyQualifiedTypeName name="com.huixin.haidong.service.customer.CustomerDao"/>
+<fullyQualifiedTypeName name="com.huixin.haidong.service.picture.PictureDao"/>
+<fullyQualifiedTypeName name="com.huixin.haidong.controller.base.BaseController"/>
+<fullyQualifiedTypeName name="com.huixin.haidong.service.news.NewsService"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
+<fullyQualifiedTypeName name="com.huixin.framework.utils.PageData"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
+<fullyQualifiedTypeName name="net.sf.json.JSONObject"/>
+<fullyQualifiedTypeName name="org.apache.axis.utils.StringUtils"/>
+<fullyQualifiedTypeName name="com.huixin.framework.enums.ContentType"/>
+<fullyQualifiedTypeName name="com.huixin.framework.base.ResponseResult"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.huixin.framework.base.RestResultGenerator"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.huixin.system.entity.Page"/>
+<fullyQualifiedTypeName name="com.huixin.haidong.service.picture.PictureService"/>
+<fullyQualifiedTypeName name="com.huixin.haidong.service.series.SeriesService"/>
+<fullyQualifiedTypeName name="com.huixin.haidong.service.project.ProjectService"/>
+<fullyQualifiedTypeName name="com.huixin.haidong.service.customer.CustomerService"/>
+</qualifiedTypeNameHistroy>

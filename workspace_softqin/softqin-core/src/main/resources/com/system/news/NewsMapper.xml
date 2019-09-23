@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="NewsMapper">
+    <!--列表  -->
+	<select id="listPage" parameterType="page" resultType="pd">
+		select 
+		     n.id,n.title,n.content,n.introduction,n.publish_date,n.update_date,p.pic
+		from 
+		     tb_news n  left outer join tb_picture p
+		 on
+		  	 n.id = p.typeId
+		where
+			1=1
+			<if test="pd.title!=null and pd.title!=''">
+				and
+				n.title LIKE CONCAT(CONCAT('%', #{pd.title}),'%')
+			</if>
+		group by n.title
+		order by n.publish_date
+	</select>
+	<!--获取所有  -->
+	<select id="listAll" parameterType="page" resultType="pd">
+		select 
+		    n.id,n.title,n.content,n.introduction,n.publish_date,n.update_date,p.pic
+		from 
+		      tb_news n  left outer join tb_picture p
+		 on
+		  	 n.id = p.typeId
+		 group by n.title
+		 order by n.publish_date
+	</select>
+		<!-- 通过id获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			n.id,n.title,n.content,n.introduction,n.publish_date,n.update_date,p.pic
+		from 
+			tb_news n  left outer join tb_picture p
+	    on
+		  	 n.id = p.typeId
+		where 
+			n.id = #{id}
+		group by n.title
+	</select>
+	<!-- 新增 -->
+	<insert id="save" parameterType="pd">
+		insert into tb_news (
+		    id,
+		    title,
+			content,
+		    introduction,
+			publish_date,
+			update_date
+		) values (
+		    #{id},
+		    #{title},
+			#{content},
+			#{introduction},
+			#{publish_date},
+			#{update_date}
+		)
+	</insert>
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  tb_news
+			set title			= #{title},
+			    content         =#{content},
+			    introduction    =#{introduction},
+				publish_date    = #{publish_date},
+				update_date    = #{update_date}
+			where 
+				id = #{id}
+	</update>
+	<!-- 删除 -->
+	<delete id="delete" parameterType="pd">
+		delete from tb_news 
+		where 
+			id = #{id}
+	</delete>
+	<!-- 删除图片 -->
+	<update id="delTp" parameterType="pd">
+		update  tb_news
+			set 
+				pic			= ''
+			where 
+				id = #{id}
+	</update>
+	
+</mapper>
